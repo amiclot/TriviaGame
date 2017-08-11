@@ -10,7 +10,7 @@
 
 	<div class = "container">
 
-	    <div class ="row">
+	    <div class ="row" id="header">
 
 	      <div class ="col-xs-12">
 
@@ -39,13 +39,25 @@
 			</div>
 	    </div>
 
-		<div class ="row q1 hidden">
+		<div class ="row questRow hidden">
 	    
 	    	<div class ="col-xs-12">
 
 	    		<div class = "panel panel-default">
 
+	    			<div class = 'panel-heading'>
+
+	    			<b>Question 1:</b>
+	    			<p>What is the name of Jon Snow's Wolf?</p>
+
+	    			</div>
+
 	    			<div class ="panel-body">
+
+	    				    <span class="answer">Grape Head <input type="radio" name ="q1"></span>
+    						<span class="answer">Ghost <input id="Ghost" type="radio" name ="q1"></span>
+    						<span class="answer">Toto <input type="radio" name ="q1"></span>
+    						<span class="answer">Puddle <input type="radio" name ="q1"></span>
 
 					</div>
 
@@ -53,13 +65,52 @@
 			</div>
 	    </div>
 		
-		<div class ="row q2 hidden">
+		<div class ="row questRow hidden">
 	    
 	    	<div class ="col-xs-12">
 
 	    		<div class = "panel panel-default">
 
+	    			<div class = 'panel-heading'>
+
+	    			<b>Question 2:</b>
+	    			<p>Rickon Stark was born and raised in what city?</p>
+
+	    			</div>
+
 	    			<div class ="panel-body">
+
+	    				    <span class="answer">Berlin <input type="radio" name ="q2"></span>
+    						<span class="answer">Winterfell <input id="Winterfell" type="radio" name ="q2"></span>
+    						<span class="answer">Fraggle Rock <input type="radio" name ="q2"></span>
+    						<span class="answer">King's Landing <input type="radio" name ="q2"></span>
+
+					</div>
+
+				</div>
+			</div>
+	    </div>
+
+
+		<div class ="row questRow hidden">
+	    
+	    	<div class ="col-xs-12">
+
+	    		<div class = "panel panel-default">
+
+	    			<div class = 'panel-heading'>
+
+	    			<b>Question 3:</b>
+	    			<p>Khal Drogo was leader of what?</p>
+
+	    			</div>
+
+	    			<div class ="panel-body">
+
+	    				    <span class="answer">Dothraki Horde <input id="Dothraki_Horde" type="radio" name ="q3"></span>
+    						<span class="answer">The Train <input type="radio" name ="q3"></span>
+    						<span class="answer">The Pack <input type="radio" name ="q3"></span>
+    						<span class="answer">Rough Riders <input type="radio" name ="q3"></span>
 
 					</div>
 
@@ -69,13 +120,26 @@
 
 
 
-		<div class ="row q3 hidden">
+
+	   	<div class ="row questRow hidden">
 	    
 	    	<div class ="col-xs-12">
 
 	    		<div class = "panel panel-default">
 
+	    			<div class = 'panel-heading'>
+
+	    			<b>Question 4:</b>
+	    			<p>What is the name of the commanding officer of the Unsullied?</p>
+
+	    			</div>
+
 	    			<div class ="panel-body">
+
+	    				    <span class="answer">Tricksy Worm <input type="radio" name ="q4"></span>
+    						<span class="answer">Squiggly Worm <input type="radio" name ="q4"></span>
+    						<span class="answer">Yung Worm <input type="radio" name ="q4"></span>
+    						<span class="answer">Grey Worm <input id="Grey_Worm" type="radio" name ="q4"></span>
 
 					</div>
 
@@ -83,16 +147,31 @@
 			</div>
 	    </div>
 
-
-
-
-	    <div class ="row q4 hidden">
-
+	    <div class ="row submitRow hidden">
+	    
 	    	<div class ="col-xs-12">
 
 	    		<div class = "panel panel-default">
 
 	    			<div class ="panel-body">
+
+	    				   <button type="button" class="btn btn-primary submitAnswers">Submit Answers</button>
+
+					</div>
+
+				</div>
+			</div>
+	    </div>
+
+	    <div class ="row results hidden1">
+	    
+	    	<div class ="col-xs-12">
+
+	    		<div class = "panel panel-default">
+
+	    			<div class ="panel-body">
+
+	    				   <h4 class = "centerText">You got <span class = "correct"></span> questions correct!</h4>
 
 					</div>
 

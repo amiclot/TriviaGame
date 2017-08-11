@@ -1,48 +1,139 @@
 window.onload = function() {
 
+	$(".startGame").on("click", function() {
+    	$(".hidden").removeClass('hidden');
+    	$("#header").addClass('hidden');
+    	run();
+    });
+
+    $(".submitAnswers").on("click", function() {
+    	$(".questRow").addClass("hidden");
+    	$(".results").removeClass("hidden1");
+    	$(".submitRow").addClass("hidden");
+    	checkedQ1();
+  		checkedQ2();
+  		checkedQ3();
+  		checkedQ4();
+  		stop();
+  		$(".correct").text(correctCount);
+    	
+    });
+    
 
   
 };
-
-
-
-
-
-var QuizQuestion = function(question, choices, correctAnswer) {
-    this.question = question;
-    this.choices = choices;
-    this.correctAnswer = correctAnswer;
-};
-
-var question1 = new QuizQuestion("what color is the sky?", ["green", "blue", "red", "yellow"], 2);
-var question2 = new QuizQuestion("what color is the bee?", ["green", "blue", "red", "yellow"], 4);
-var question3 = new QuizQuestion("what color is the stop sign?", ["green", "blue", "red", "yellow"], 3);
-var question4 = new QuizQuestion("what color is the dirt?", ["brown", "blue", "red", "yellow"], 1);
 
 var number = 30;
 
 var intervalId;
 
+var correctCount = 0;
+var incorrectCount = 0;
 
-    function run() {
-      intervalId = setInterval(decrement, 1000);
+var correct = function(){
+	correctCount++;
+}
+
+var incorrect = function(){
+	incorrectCount++;
+}
+
+var checkedQ1 = function(){
+    if(document.getElementById('Ghost').checked) {
+    	console.log('correct')
+		correct();
+		console.log(correctCount);
+
+	}else  {
+		console.log('incorrect')
+		incorrect();
+		console.log(incorrectCount);
+	}
+}
+
+var checkedQ2 = function(){
+    if(document.getElementById('Winterfell').checked) {
+    	console.log('correct')
+		correct();
+		console.log(correctCount);
+
+	}else  {
+		console.log('incorrect')
+		incorrect();
+		console.log(incorrectCount);
+	}
+}
+
+var checkedQ3 = function(){
+    if(document.getElementById('Dothraki_Horde').checked) {
+    	console.log('correct')
+		correct();
+		console.log(correctCount);
+
+	}else  {
+		console.log('incorrect')
+		incorrect();
+		console.log(incorrectCount);
+	}
+}
+
+var checkedQ4 = function(){
+    if(document.getElementById('Grey_Worm').checked) {
+    	console.log('correct')
+		correct();
+		console.log(correctCount);
+
+	}else  {
+		console.log('incorrect')
+		incorrect();
+		console.log(incorrectCount);
+	}
+}
+
+var showResults = function(){
+
+
+}
+
+
+
+var run = function() {
+  intervalId = setInterval(decrement, 1000);
+};
+
+var stop = function() {
+
+      clearInterval(intervalId);
     }
 
-    function decrement() {
 
-      number--;
+var decrement = function() {
 
-      $("#show-number").html("<h2>" + number + "</h2>");
+  number--;
 
-      if (number === 0) {
+  $("#show-number").html("<h2>Time Remaining: " + number + "</h2>");
 
-        alert("Time Up!");
-      }
-    }
-
-    $(".startGame").on("click", function() {
-    	$(".hidden").removeClass('hidden');
-    	$("#header").addClass('hidden');
-    	run();
-    });
+  if (number === 0) {
+  	checkedQ1();
+  	checkedQ2();
+  	checkedQ3();
+  	checkedQ4();
+  	stop();
+  	$(".submitRow").addClass("hidden");
+  	$(".questRow").addClass("hidden");
+    $(".results").removeClass("hidden1");
+    $(".correct").text(correctCount);
     
+  }
+
+
+
+};
+
+
+
+
+
+
+
+
