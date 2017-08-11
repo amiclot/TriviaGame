@@ -7,15 +7,7 @@ window.onload = function() {
     });
 
     $(".submitAnswers").on("click", function() {
-    	$(".questRow").addClass("hidden");
-    	$(".results").removeClass("hidden1");
-    	$(".submitRow").addClass("hidden");
-    	checkedQ1();
-  		checkedQ2();
-  		checkedQ3();
-  		checkedQ4();
-  		stop();
-  		$(".correct").text(correctCount);
+    endGame();
     	
     });
     
@@ -90,8 +82,17 @@ var checkedQ4 = function(){
 	}
 }
 
-var showResults = function(){
-
+var endGame = function(){
+	checkedQ1();
+  	checkedQ2();
+  	checkedQ3();
+  	checkedQ4();
+  	stop();
+  	$(".submitRow").addClass("hidden");
+  	$(".questRow").addClass("hidden");
+    $(".results").removeClass("hidden1");
+    $(".correct").text(correctCount);
+    $(".incorrect").text(incorrectCount);
 
 }
 
@@ -114,15 +115,7 @@ var decrement = function() {
   $("#show-number").html("<h2>Time Remaining: " + number + "</h2>");
 
   if (number === 0) {
-  	checkedQ1();
-  	checkedQ2();
-  	checkedQ3();
-  	checkedQ4();
-  	stop();
-  	$(".submitRow").addClass("hidden");
-  	$(".questRow").addClass("hidden");
-    $(".results").removeClass("hidden1");
-    $(".correct").text(correctCount);
+  	endGame();
     
   }
 
