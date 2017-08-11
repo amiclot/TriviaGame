@@ -9,3 +9,13 @@
 .hidden1{
 	display:none;
 }
+
+
+html, body{height:100%;}
+
+body {
+background: url(../images/background.jpg);
+background-size: cover;
+background-repeat: repeat-y;
+
+}
